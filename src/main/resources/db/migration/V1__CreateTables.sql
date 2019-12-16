@@ -1,6 +1,6 @@
 create table user (
     id bigint primary key auto_increment,
-    name varchar (100),
+    name varchar (100)
 );
 
 create table match (
@@ -19,6 +19,6 @@ insert into user (id, name) values (6,'fff');
 insert into match (id, user_id, score) values (1, 1, 1000);
 insert into match (id, user_id, score) values (2, 2, 2000);
 insert into match (id, user_id, score) values (3, 3, 3000);
-insert into match (id, user_id, score) values (5, 4, 4000);
+insert into match (id, user_id, score) values (4, 4, 4000);
 insert into match (id, user_id, score) values (5, 5, 5000);
 insert into match (id, user_id, score) values (6, 6, 6000);
