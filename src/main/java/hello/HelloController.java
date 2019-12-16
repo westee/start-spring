@@ -1,17 +1,21 @@
 package hello;
 
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
+import hello.dao.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @RestController
 public class HelloController {
+    @Autowired
+    private UserMapper userMapper;
 
-    @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public String search(@RequestParam("q") String searchKeyword,
-                         @RequestParam(value="charset",required=false)String charset) {
-        return "关键字是" + searchKeyword;
+    @RequestMapping("/")
+    @ResponseBody
+    public Object search(HttpServletRequest request, HttpServletResponse response) {
+        return userMapper.getUserById(1);
     }
 
 }
