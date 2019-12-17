@@ -10,4 +10,6 @@
         <mapper resource="db/mybatis/MyMapper.xml"/>
         <mapper class="hello.dao.UserMapper"/>
     </mappers>
+
+
 </configuration>
